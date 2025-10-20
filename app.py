@@ -40,7 +40,7 @@ video_id = "training_001"
 st.caption("시청시작 버튼을 누르고 Play 재생한 다음 시청종료 버튼을 누르세요.")
 
 if user:
-    st.video("https://1drv.ms/v/c/6b428db188ab9dde/IQRmNzJoLFgWS5jokKct_uiIAWHlX_zqAoPthXXimZ8B22I?width=1920&height=1080")
+    st.video("https://drive.google.com/uc?export=view&id=17Krfz0rIQUtSXLLsNZpYzV3R5LGL28rE")
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
     if "start_time" not in st.session_state:
