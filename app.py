@@ -40,7 +40,7 @@ video_id = "training_001"
 st.caption("시청시작 버튼을 누르고 Play 재생한 다음 시청종료 버튼을 누르세요.")
 
 if user:
-    st.video("https://player.vimeo.com/video/1128765663?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479")
+    st.video("https://vimeo.com/1128765663?fl=ip&fe=ec")
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
     if "start_time" not in st.session_state:
