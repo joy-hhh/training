@@ -46,7 +46,7 @@ embed_code = """
 """
 
 if user:
-    components.html(embed_code, height=480)
+    components.html(embed_code, height=400)
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
     if "start_time" not in st.session_state:
