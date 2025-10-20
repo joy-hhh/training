@@ -40,7 +40,7 @@ video_id = "training_001"
 st.caption("시청시작 버튼을 누르고 Play 재생한 다음 시청종료 버튼을 누르세요.")
 
 if user:
-    st.video("https://www.w3schools.com/html/mov_bbb.mp4")
+    st.video("https://ktoffice3651000358-my.sharepoint.com/personal/hjshin_rsmkr_kr/_layouts/15/stream.aspx?id=%2Fpersonal%2Fhjshin%5Frsmkr%5Fkr%2FDocuments%2F%EB%8F%99%EC%98%81%EC%83%81%2FClipchamp%2Ftest%20%EA%B0%95%EC%9D%98%20%ED%8C%8C%EC%9D%BC%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2569f10e%2Da962%2D4cb8%2D90a7%2D28c6d3dee983&ga=1&LOF=1")
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
     if "start_time" not in st.session_state:
