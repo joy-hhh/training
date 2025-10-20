@@ -3,6 +3,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import time
 from datetime import datetime
+import streamlit.components.v1 as components
 
 # ---------------------
 # Google Sheets 연결 설정
@@ -39,8 +40,13 @@ video_id = "training_001"
 
 st.caption("시청시작 버튼을 누르고 Play 재생한 다음 시청종료 버튼을 누르세요.")
 
+# 너비(width)와 높이(height)는 원하는 크기로 조절할 수 있습니다.
+embed_code = """
+<iframe src="https://drive.google.com/file/d/17Krfz0rIQUtSXLLsNZpYzV3R5LGL28rE/preview" width="640" height="480" allow="autoplay"></iframe>
+"""
+
 if user:
-    st.video("https://drive.google.com/uc?export=view&id=17Krfz0rIQUtSXLLsNZpYzV3R5LGL28rE")
+    components.html(embed_code, height=480)
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
     if "start_time" not in st.session_state:
