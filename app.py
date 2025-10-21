@@ -42,11 +42,11 @@ st.caption("시청시작 버튼을 누르고 Play 재생한 다음 시청종료 
 
 # 너비(width)와 높이(height)는 원하는 크기로 조절할 수 있습니다.
 embed_code = """
-<iframe src="https://drive.google.com/file/d/17Krfz0rIQUtSXLLsNZpYzV3R5LGL28rE/preview" width="640" height="480" allow="autoplay"></iframe>
+<iframe src="https://drive.google.com/file/d/17Krfz0rIQUtSXLLsNZpYzV3R5LGL28rE/preview" width="100%" height="500" allow="autoplay"></iframe>
 """
 
 if user:
-    components.html(embed_code, height=400)
+    components.html(embed_code, height=510)
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
     if "start_time" not in st.session_state:
