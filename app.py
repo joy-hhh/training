@@ -45,7 +45,7 @@ embed_code = """
 <iframe src="https://drive.google.com/file/d/17Krfz0rIQUtSXLLsNZpYzV3R5LGL28rE/preview" width="100%" height="500" allow="autoplay"></iframe>
 """
 
-if user:
+if user and userid and useremail:
     components.html(embed_code, height=510)
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
