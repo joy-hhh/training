@@ -3,8 +3,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 import time
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import streamlit.components.v1 as components
-
 # ---------------------
 # Google Sheets 연결 설정
 # ---------------------
@@ -63,8 +63,10 @@ if user and userid and useremail:
             if st.session_state.start_time:
                 end_time = time.time()
                 elapsed = end_time - st.session_state.start_time
-                start_dt = datetime.fromtimestamp(st.session_state.start_time).strftime("%Y-%m-%d %H:%M:%S")
-                end_dt = datetime.fromtimestamp(end_time).strftime("%Y-%m-%d %H:%M:%S")
+                # 서울 시간대(KST)를 적용하여 시간을 변환
+                seoul_tz = ZoneInfo("Asia/Seoul")
+                start_dt = datetime.fromtimestamp(st.session_state.start_time, tz=seoul_tz).strftime("%Y-%m-%d %H:%M:%S")
+                end_dt = datetime.fromtimestamp(end_time, tz=seoul_tz).strftime("%Y-%m-%d %H:%M:%S")
 
                 # Google Sheets에 기록
                 sheet.append_row([user, userid, useremail, video_id, elapsed, start_dt, end_dt])
