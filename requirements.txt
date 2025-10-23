@@ -2,4 +2,3 @@ python-version==3.11
 streamlit
 gspread
 google-auth
-st-keep-alive

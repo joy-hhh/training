@@ -5,7 +5,6 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import streamlit.components.v1 as components
-from st_keep_alive import keep_alive
 
 # ---------------------
 # Google Sheets 연결 설정
@@ -49,8 +48,36 @@ embed_code = """
 
 if user and userid and useremail:
     components.html(embed_code, height=510)
-    
-    keep_alive()
+    components.html(
+        """
+        <script>
+        const streamlitDoc = window.parent.document;
+
+        const observer = new MutationObserver(function (mutations, obs) {
+            const iframes = streamlitDoc.querySelectorAll('iframe[title="st.iframe"]');
+            if (iframes.length > 0) {
+                const streamlitIframe = iframes[0];
+                // 5분(300000ms)마다 Streamlit 서버에 신호를 보냅니다.
+                setInterval(() => {
+                    streamlitIframe.contentWindow.postMessage({
+                        isStreamlitMessage: true,
+                        type: "setComponentValue",
+                        key: "keep-alive", // 유니크한 키
+                        value: new Date().getTime()
+                    }, "*");
+                }, 300000);
+                obs.disconnect(); // 성공적으로 찾았으면 관찰 중지
+            }
+        });
+
+        observer.observe(streamlitDoc.body, {
+            childList: true,
+            subtree: true
+        });
+        </script>
+        """,
+        height=0, # 화면에 보이지 않도록 높이를 0으로 설정
+    )
     
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
