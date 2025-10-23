@@ -5,6 +5,8 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import streamlit.components.v1 as components
+from st_keep_alive import keep_alive
+
 # ---------------------
 # Google Sheets 연결 설정
 # ---------------------
@@ -47,6 +49,9 @@ embed_code = """
 
 if user and userid and useremail:
     components.html(embed_code, height=510)
+    
+    keep_alive()
+    
     st.write("▶ 아래 버튼으로 시청 시간을 기록하세요.")
 
     if "start_time" not in st.session_state:
