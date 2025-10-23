@@ -42,7 +42,7 @@ st.caption("시청시작 버튼을 누르고 Play 재생한 다음 시청종료 
 
 # 너비(width)와 높이(height)는 원하는 크기로 조절할 수 있습니다.
 embed_code = """
-<iframe src="https://drive.google.com/file/d/17Krfz0rIQUtSXLLsNZpYzV3R5LGL28rE/preview" width="100%" height="500" allow="autoplay"></iframe>
+<iframe src="https://1drv.ms/v/c/6b428db188ab9dde/IQRCk7bTG4z8Sq_HNhpTcIUiAcRTXTya4pZe9KROLv8sUHQ?width=1278&height=672" width="100%" height="500" allow="autoplay"></iframe>
 """
 
 if user and userid and useremail:
