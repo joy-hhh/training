@@ -177,7 +177,7 @@ else:
         start_dt_str = datetime.fromtimestamp(st.session_state.start_time, tz=seoul_tz).strftime("%Y-%m-%d %H:%M:%S")
         # 경고창 대신 성공 메시지로 안심시키기
         st.success(f"✅ [시청 중] 시작 시간: {start_dt_str}")
-        st.caption("화면을 벗어나도 기록은 유지됩니다. 종료 시 반드시 아래 '시청 종료' 버튼을 눌러주세요.")
+        st.caption("시청 시작 시간을 유지하고 있습니다. 종료 시 반드시 아래 '시청 종료' 버튼을 눌러주세요.")
     else:
         st.write("🔽 아래 '시청 시작' 버튼을 눌러 교육을 시작하세요.")
 
